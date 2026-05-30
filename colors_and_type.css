@@ -1,0 +1,186 @@
+/* ============================================================
+   Horváth Milán — Tokens
+   Pénzügyi tanácsadó / Allianz Bónusz Életprogram
+   Reference vocabulary: drzolnay.com — dark, editorial, premium
+   ============================================================ */
+
+:root {
+  /* ---------- Color: foundation ---------- */
+  --bg-0:        #0a0a0a;   /* page base, near-black */
+  --bg-1:        #111111;   /* card / raised surface */
+  --bg-2:        #161616;   /* hover surface, input fill */
+  --bg-3:        #1d1d1d;   /* divider blocks */
+  --line-1:      rgba(255,255,255,0.08);  /* hairline divider */
+  --line-2:      rgba(255,255,255,0.16);  /* button border, input border */
+  --line-3:      rgba(255,255,255,0.32);  /* hover border */
+
+  /* ---------- Color: foreground ---------- */
+  --fg-0:        #ffffff;                 /* headings, key copy */
+  --fg-1:        rgba(255,255,255,0.86);  /* body */
+  --fg-2:        rgba(255,255,255,0.62);  /* secondary, captions */
+  --fg-3:        rgba(255,255,255,0.42);  /* labels, smallcaps */
+  --fg-4:        rgba(255,255,255,0.22);  /* disabled, faint */
+
+  /* ---------- Color: accent (warm gold — financial trust + golden-hour mood) ---------- */
+  --accent:        #c9a96e;
+  --accent-soft:   #d8bf8a;
+  --accent-deep:   #a88a52;
+  --accent-glow:   rgba(201,169,110,0.18);
+
+  /* ---------- Color: semantic ---------- */
+  --positive:     #8aab7c;   /* growth, gains */
+  --warning:      #d4a657;   /* attention */
+  --danger:       #c97a6e;   /* used sparingly */
+
+  /* ---------- Type: families ---------- */
+  --serif-display: "Bodoni Moda", Georgia, "Times New Roman", serif;
+  --sans-body:     "DM Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono:          "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---------- Type: scale (clamp for fluid responsive) ---------- */
+  --t-display:  clamp(56px, 8vw, 120px);     /* hero name */
+  --t-h1:       clamp(40px, 5.4vw, 76px);    /* section openers */
+  --t-h2:       clamp(28px, 3.4vw, 48px);    /* sub-headings */
+  --t-h3:       clamp(20px, 2.0vw, 28px);    /* card titles */
+  --t-lead:     clamp(17px, 1.4vw, 21px);    /* lead paragraph */
+  --t-body:     16px;                        /* body */
+  --t-small:    14px;                        /* captions */
+  --t-cap:      12px;                        /* smallcaps labels */
+
+  /* ---------- Type: weights ---------- */
+  --w-light:    300;
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semi:     600;
+  --w-bold:     700;
+
+  /* ---------- Type: leading ---------- */
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-body:    1.65;
+
+  /* ---------- Type: tracking ---------- */
+  --ls-cap:     0.18em;   /* small-caps labels */
+  --ls-eyebrow: 0.32em;   /* eyebrow labels */
+  --ls-tight:   -0.02em;  /* display headings */
+
+  /* ---------- Spacing (4-base) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  24px;
+  --s-6:  32px;
+  --s-7:  48px;
+  --s-8:  64px;
+  --s-9:  96px;
+  --s-10: 128px;
+  --s-11: 160px;
+
+  /* ---------- Layout ---------- */
+  --container:  1240px;
+  --gutter:     clamp(20px, 4vw, 64px);
+  --section-y:  clamp(80px, 10vw, 160px);
+
+  /* ---------- Radii (very modest — editorial site) ---------- */
+  --r-0:  0;
+  --r-1:  2px;
+  --r-2:  4px;
+  --r-pill: 999px;
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout:  cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    180ms;
+  --dur-base:    320ms;
+  --dur-slow:    640ms;
+  --dur-reveal:  900ms;
+
+  /* ---------- Shadows (used sparingly on dark) ---------- */
+  --shadow-1: 0 1px 0 rgba(255,255,255,0.04) inset, 0 12px 32px rgba(0,0,0,0.4);
+  --shadow-2: 0 24px 60px rgba(0,0,0,0.55);
+}
+
+/* ============================================================
+   Semantic primitives — drop these classes anywhere
+   ============================================================ */
+
+.eyebrow {
+  font-family: var(--sans-body);
+  font-size: var(--t-cap);
+  font-weight: var(--w-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.smallcaps {
+  font-family: var(--sans-body);
+  font-size: var(--t-cap);
+  font-weight: var(--w-semi);
+  letter-spacing: var(--ls-cap);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.display {
+  font-family: var(--serif-display);
+  font-weight: var(--w-regular);
+  font-optical-sizing: auto;
+  font-size: var(--t-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-0);
+}
+
+.h1 {
+  font-family: var(--serif-display);
+  font-weight: var(--w-regular);
+  font-optical-sizing: auto;
+  font-size: var(--t-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--fg-0);
+}
+
+.h2 {
+  font-family: var(--serif-display);
+  font-weight: var(--w-regular);
+  font-optical-sizing: auto;
+  font-size: var(--t-h2);
+  line-height: var(--lh-snug);
+  color: var(--fg-0);
+}
+
+.h3 {
+  font-family: var(--serif-display);
+  font-weight: var(--w-medium);
+  font-optical-sizing: auto;
+  font-size: var(--t-h3);
+  line-height: var(--lh-snug);
+  color: var(--fg-0);
+}
+
+.lead {
+  font-family: var(--sans-body);
+  font-size: var(--t-lead);
+  font-weight: var(--w-light);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+
+.body {
+  font-family: var(--sans-body);
+  font-size: var(--t-body);
+  font-weight: var(--w-regular);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+
+.caption {
+  font-family: var(--sans-body);
+  font-size: var(--t-small);
+  font-weight: var(--w-regular);
+  line-height: 1.5;
+  color: var(--fg-2);
+}
