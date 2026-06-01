@@ -3627,6 +3627,98 @@ input[type="range"].calc-slider::-moz-range-thumb {
   .preloader-logo-wrap { height: 100px; }
 }
 
+/* ── Info tooltip ── */
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+.info-tip-btn {
+  background: none;
+  border: 1px solid rgba(201,168,76,0.55);
+  color: var(--accent);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 9px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: Georgia, serif;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.info-tip-btn:hover {
+  background: rgba(201,168,76,0.18);
+  border-color: var(--accent);
+}
+.info-tip-box {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1c1c1c;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  padding: 11px 32px 11px 13px;
+  font-size: 12px;
+  font-family: var(--sans-body);
+  font-style: normal;
+  color: rgba(255,255,255,0.78);
+  line-height: 1.55;
+  width: 230px;
+  z-index: 200;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.55);
+  white-space: normal;
+  text-align: left;
+  pointer-events: auto;
+}
+.info-tip-close {
+  position: absolute;
+  top: 7px;
+  right: 9px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.15s;
+}
+.info-tip-close:hover { color: rgba(255,255,255,0.8); }
+/* Nyilacska a tooltip alján */
+.info-tip-box::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(201,168,76,0.3);
+}
+/* Mobilon: tooltip balra igazítva, hogy ne lógjon ki */
+@media (max-width: 640px) {
+  .info-tip-box {
+    left: auto;
+    right: -8px;
+    transform: none;
+    width: 200px;
+  }
+  .info-tip-box::after {
+    left: auto;
+    right: 14px;
+    transform: none;
+  }
+}
+
 /* ── Kalkulator: fül-sor + mobil eredmény gomb ── */
 .calc-tabs-sor {
   display: flex;
