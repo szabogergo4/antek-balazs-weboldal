@@ -62,6 +62,7 @@ function calcBonus(monthly, activeYears, withSzja, rate) {
       balance:     Math.round(balance),
       szja_cum:    Math.round(szjaAcc),
       szja_ev_yr:  Math.round(szja_credit),
+      hozam_cum:   Math.round(balance) - monthly * 12 * y,
     });
   }
 
@@ -113,10 +114,7 @@ function InfoTooltip({ text }) {
         aria-label="Információ"
       >i</button>
       {open && (
-        <span className="info-tip-box" role="tooltip">
-          {text}
-          <button type="button" className="info-tip-close" onClick={function() { setOpen(false); }}>×</button>
-        </span>
+        <span className="info-tip-box" role="tooltip">{text}</span>
       )}
     </span>
   );
@@ -502,7 +500,7 @@ function Calculator() {
             </p>
 
             <div className="calc-breakdown">
-              <div className="item">
+              <div className="item item-toke">
                 <div className="lbl">Összes tőke <InfoTooltip text="Az általad befizetett pénz teljes összege a megtakarítási időszak alatt." /></div>
                 <div className="val"><SzamFt v={result.grossPaid} /></div>
                 {eurRate > 0 && <div className="val-eur"><SzamEur v={Math.round(result.grossPaid / eurRate)} /></div>}
@@ -545,8 +543,19 @@ function Calculator() {
             </button>
 
             <div className="calc-disclaimer">
-              <strong>Tájékoztató számítás.</strong><br/>
-              Vázlatszerű tájékoztatás — *adminisztrációs költség a 13. hónaptól
+              <div className="calc-disclaimer-header">
+                <span className="calc-disclaimer-title">Tájékoztató számítás</span>
+                <InfoTooltip text="Vázlatszerű tájékoztatás — *adminisztrációs költség a 13. hónaptól" />
+              </div>
+              <div className="calc-disclaimer-pills">
+                <span className="calc-disclaimer-pill">{Math.round(calcRate * 100)}% éves bruttó hozam</span>
+                <span className="calc-disclaimer-pill">1,19% éves alapkezelési díj</span>
+                <span className="calc-disclaimer-pill">990 Ft / hó admin (3. évtől)</span>
+              </div>
+              <p className="calc-disclaimer-note">
+                A tényleges hozam a piaci körülményektől eltérhet.<br/>
+                A hűségbónusz és SZJA visszatérítés a szerződéskötéskor érvényes jogszabályok szerint érvényesíthető.
+              </p>
             </div>
           </div>
 
@@ -594,6 +603,11 @@ function Calculator() {
                         <span className="adat-ft"><SzamFt v={monthly * 12} /></span>
                         {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(monthly * 12 / eurRate)} /></span>}
                       </div>
+                      <div className="ev-adat hozam-szin">
+                        <span className="adat-cimke">HOZAM</span>
+                        <span className="adat-ft"><SzamFt v={row.hozam_cum} /></span>
+                        {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(row.hozam_cum / eurRate)} /></span>}
+                      </div>
                       {withSzja && (
                         <div className="ev-adat bonusz">
                           <span className="adat-cimke">SZJA</span>
@@ -615,6 +629,10 @@ function Calculator() {
                   <div className="ev-adat">
                     <span className="adat-cimke">TŐKE</span>
                     <span className="adat-ft"><SzamFt v={result.grossPaid} /></span>
+                  </div>
+                  <div className="ev-adat hozam-szin">
+                    <span className="adat-cimke">HOZAM</span>
+                    <span className="adat-ft"><SzamFt v={result.hozam} /></span>
                   </div>
                   {withSzja && (
                     <div className="ev-adat bonusz">
