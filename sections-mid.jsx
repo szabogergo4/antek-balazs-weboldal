@@ -71,7 +71,7 @@ function calcBonus(monthly, activeYears, withSzja, rate) {
     bonusCum:  Math.round(cumBonus),
     szja:      Math.round(szjaAcc),
     total:     Math.round(balance) + Math.round(szjaAcc),
-    hozam:     Math.round(balance) - (monthly * 12 * activeYears) - Math.round(cumBonus),
+    hozam:     Math.round(balance) - (monthly * 12 * activeYears),
     yearlyData: yearlyData,
   };
 }
@@ -512,11 +512,6 @@ function Calculator() {
                 <div className="val">+<SzamFt v={result.hozam} /></div>
                 {eurRate > 0 && <div className="val-eur"><SzamEur v={Math.round(result.hozam / eurRate)} /></div>}
               </div>
-              <div className="item gain">
-                <div className="lbl">Hűségbónusz <InfoTooltip text="A kitartó megtakarítóknak járó extra juttatás, amelyet a futamidő végén írnak jóvá." /></div>
-                <div className="val">+<SzamFt v={result.bonusCum} /></div>
-                {eurRate > 0 && <div className="val-eur"><SzamEur v={Math.round(result.bonusCum / eurRate)} /></div>}
-              </div>
               {withSzja && (
                 <div className="item gain">
                   <div className="lbl">SZJA visszatérítés</div>
@@ -576,11 +571,6 @@ function Calculator() {
                 <div className="calc-summary-value bonus"><SzamFt v={result.hozam} /></div>
                 {eurRate > 0 && <div className="calc-summary-eur"><SzamEur v={Math.round(result.hozam / eurRate)} /></div>}
               </div>
-              <div className="calc-summary-card">
-                <div className="calc-summary-label">HŰSÉGBÓNUSZ</div>
-                <div className="calc-summary-value bonus"><SzamFt v={result.bonusCum} /></div>
-                {eurRate > 0 && <div className="calc-summary-eur"><SzamEur v={Math.round(result.bonusCum / eurRate)} /></div>}
-              </div>
               {withSzja && (
                 <div className="calc-summary-card">
                   <div className="calc-summary-label">SZJA VISSZATÉRÍTÉS</div>
@@ -608,11 +598,6 @@ function Calculator() {
                         <span className="adat-ft"><SzamFt v={monthly * 12} /></span>
                         {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(monthly * 12 / eurRate)} /></span>}
                       </div>
-                      <div className="ev-adat bonusz">
-                        <span className="adat-cimke">HŰSÉGBÓNUSZ</span>
-                        <span className="adat-ft">+<SzamFt v={row.bon_cum} /></span>
-                        {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(row.bon_cum / eurRate)} /></span>}
-                      </div>
                       {withSzja && (
                         <div className="ev-adat bonusz">
                           <span className="adat-cimke">SZJA</span>
@@ -634,10 +619,6 @@ function Calculator() {
                   <div className="ev-adat">
                     <span className="adat-cimke">TŐKE</span>
                     <span className="adat-ft"><SzamFt v={result.grossPaid} /></span>
-                  </div>
-                  <div className="ev-adat bonusz">
-                    <span className="adat-cimke">BÓNUSZ</span>
-                    <span className="adat-ft"><SzamFt v={result.bonusCum} /></span>
                   </div>
                   {withSzja && (
                     <div className="ev-adat bonusz">
