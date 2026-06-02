@@ -20,10 +20,16 @@ function Quiz() {
     true;
 
   // ── Lead delivery via Formspree ────────────────────────────────────
-  // Replace FORMSPREE_ID below with the real ID from formspree.io
-  // (sign up free, create form, copy the f/XXXXX from the endpoint URL).
-  // Until then, submissions log to console + show success state.
   const FORMSPREE_ID = "xlgvqlvv";
+
+  // ── Auto-reply via EmailJS ─────────────────────────────────────────
+  // 1. Regisztrálj a emailjs.com oldalon (ingyenes: 200 email/hó)
+  // 2. Hozz létre egy Email Service-t (pl. Gmail / Outlook)
+  // 3. Hozz létre egy Email Template-t (lásd lentebb a változókat)
+  // 4. Töltsd ki az alábbi három konstanst a saját értékeiddel:
+  const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // pl. "service_abc123"
+  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // pl. "template_xyz789"
+  const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // pl. "AbCdEfGhIjKlMnOp"
 
   const submitLead = async () => {
     const labelFor = (qid, val) => {
@@ -46,7 +52,9 @@ function Quiz() {
       forrás: "baloghrichard.hu — kérdőív",
       időpont: new Date().toLocaleString("hu-HU"),
     };
-    if (FORMSPREE_ID && FORMSPREE_ID !== "YOUR_FORMSPREE_ID") {
+
+    // 1) Formspree — lead értesítő Richárdnak
+    if (FORMSPREE_ID) {
       try {
         await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
           method: "POST",
@@ -54,10 +62,39 @@ function Quiz() {
           body: JSON.stringify(payload),
         });
       } catch (e) {
-        console.warn("Lead delivery failed:", e);
+        console.warn("Formspree lead delivery failed:", e);
       }
-    } else {
-      console.info("[Quiz] Lead (placeholder, Formspree ID not set):", payload);
+    }
+
+    // 2) EmailJS — automatikus visszaigazolás a kitöltőnek
+    // Template változók: {{to_name}}, {{to_email}}, {{cel}}, {{futamido}}, {{havi_keret}}, {{idopont}}
+    if (
+      typeof window.emailjs !== "undefined" &&
+      EMAILJS_SERVICE_ID  !== "YOUR_SERVICE_ID" &&
+      EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID" &&
+      EMAILJS_PUBLIC_KEY  !== "YOUR_PUBLIC_KEY"
+    ) {
+      try {
+        await window.emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            to_name:     contact.name.split(" ")[0] || contact.name,
+            to_email:    contact.email,
+            cel:         labelFor("goal",       answers.goal),
+            futamido:    labelFor("horizon",    answers.horizon),
+            havi_keret:  labelFor("monthly",    answers.monthly),
+            tapasztalat: labelFor("experience", answers.experience),
+            idopont:     new Date().toLocaleString("hu-HU"),
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+        console.info("[EmailJS] Auto-reply sent to", contact.email);
+      } catch (e) {
+        console.warn("[EmailJS] Auto-reply failed:", e);
+      }
+    } else if (EMAILJS_SERVICE_ID === "YOUR_SERVICE_ID") {
+      console.info("[EmailJS] Placeholder IDs — auto-reply skipped. Set EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY.");
     }
   };
 
