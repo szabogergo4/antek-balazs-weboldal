@@ -23,7 +23,7 @@ function Quiz() {
   // Replace FORMSPREE_ID below with the real ID from formspree.io
   // (sign up free, create form, copy the f/XXXXX from the endpoint URL).
   // Until then, submissions log to console + show success state.
-  const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // ← cseréld ki
+  const FORMSPREE_ID = "xlgvqlvv";
 
   const submitLead = async () => {
     const labelFor = (qid, val) => {
