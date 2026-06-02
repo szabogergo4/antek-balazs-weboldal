@@ -18,7 +18,7 @@ const SITE = {
   hero: {
     eyebrow: "BÓNUSZ ÉLETPROGRAM",
     h1html: "Tervezd meg a következő <em>10 évedet</em>.",
-    sub: "Segítek megépíteni azt a vagyont, amire egész életedben szükséged lesz, kamatadó-mentesen, hűségbónusszal, teljes átláthatósággal.",
+    sub: "Segítek megépíteni azt a vagyont, amire egész életedben szükséged lesz, kamatadó-mentesen, kiemelkedő hozamokkal, transzparens módon.",
     primary: "Számold ki",
     secondary: "Beszéljünk",
     // Coverr CDN — golden-hour ambient cityscape; muted/looping
