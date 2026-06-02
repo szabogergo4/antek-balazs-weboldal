@@ -2168,6 +2168,36 @@ input[type="range"].calc-slider::-moz-range-thumb {
 }
 @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; gap: var(--s-7); } }
 
+.contact-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  margin-bottom: var(--s-4);
+}
+.contact-eyebrow-row .section-eyebrow { margin-bottom: 0; }
+.contact-permalink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-family: var(--sans-body);
+  font-weight: var(--w-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-pill);
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+  white-space: nowrap;
+}
+.contact-permalink:hover {
+  color: var(--accent);
+  border-color: rgba(201,169,110,0.4);
+  background: rgba(201,169,110,0.06);
+}
+
 .contact-left h2 {
   font-family: var(--serif-display);
   font-weight: var(--w-regular);

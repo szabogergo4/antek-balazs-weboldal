@@ -166,12 +166,30 @@ window.Quiz = Quiz;
 
 function Contact() {
   const c = SITE.contact;
+  const [copied, setCopied] = React.useState(false);
+
+  const copyLink = () => {
+    const url = window.location.origin + window.location.pathname + "#kapcsolat";
+    navigator.clipboard.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
   return (
     <section className="section contact" id="kapcsolat">
       <div className="container">
         <div className="contact-grid">
           <div className="contact-left reveal">
-            <div className="section-eyebrow">{c.eyebrow}</div>
+            <div className="contact-eyebrow-row">
+              <div className="section-eyebrow">{c.eyebrow}</div>
+              <button className="contact-permalink" onClick={copyLink} title="Közvetlen link másolása">
+                {copied
+                  ? <><Icon name="check" size={13}/> <span>Másolva</span></>
+                  : <><Icon name="link" size={13}/> <span>Link másolása</span></>
+                }
+              </button>
+            </div>
             <h2>{c.title}</h2>
             <p className="lead">{c.lead}</p>
             <ul className="contact-list">
