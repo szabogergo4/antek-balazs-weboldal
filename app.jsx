@@ -47,8 +47,8 @@ function App() {
     let cx = -9999, cy = -9999;
     function onMove(e) { tx = e.clientX; ty = e.clientY; }
     function tick() {
-      cx += (tx - cx) * 0.32;
-      cy += (ty - cy) * 0.32;
+      cx += (tx - cx) * 0.48;
+      cy += (ty - cy) * 0.48;
       root.style.setProperty("--cx", cx + "px");
       root.style.setProperty("--cy", cy + "px");
       rafId = requestAnimationFrame(tick);
