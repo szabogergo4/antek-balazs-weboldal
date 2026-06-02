@@ -12,17 +12,17 @@ html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
   position: fixed;
   pointer-events: none;
   z-index: 9990;
-  width: 750px;
-  height: 750px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
   left: var(--cx, -9999px);
   top: var(--cy, -9999px);
   transform: translate(-50%, -50%);
   background: radial-gradient(circle,
-    rgba(201,169,110,0.22) 0%,
-    rgba(201,169,110,0.10) 28%,
-    rgba(201,169,110,0.03) 55%,
-    transparent 72%
+    rgba(201,169,110,0.42) 0%,
+    rgba(201,169,110,0.18) 35%,
+    rgba(201,169,110,0.04) 60%,
+    transparent 75%
   );
   mix-blend-mode: screen;
   will-change: left, top;
