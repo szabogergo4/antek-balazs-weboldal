@@ -1503,6 +1503,7 @@ input[type="range"].calc-slider::-moz-range-thumb {
 }
 .calc-summary-value.bonus { color: #c9a84c; }
 .calc-summary-value.bonus .szam-ertek { color: #c9a84c; }
+.calc-summary-value .szam-ertek { color: var(--fg-0); }
 .calc-summary-eur {
   font-size: 13px;
   color: rgba(255,255,255,0.4);
