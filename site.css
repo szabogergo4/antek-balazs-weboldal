@@ -603,8 +603,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 80% 20%, var(--accent-glow), transparent 60%);
-  opacity: 0.6;
+  background: radial-gradient(ellipse at 20% 50%, var(--accent-glow), transparent 60%);
+  opacity: 0.55;
 }
 
 .precalc-inner {
@@ -721,8 +721,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 80% 20%, var(--accent-glow), transparent 60%);
-  opacity: 0.6;
+  background: radial-gradient(ellipse at 80% 80%, var(--accent-glow), transparent 60%);
+  opacity: 0.55;
 }
 
 .services-head {
@@ -1731,11 +1731,9 @@ input[type="range"].calc-slider::-moz-range-thumb {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 20%, var(--accent-glow), transparent 60%);
+  background: radial-gradient(ellipse at 20% 80%, var(--accent-glow), transparent 60%);
   opacity: 0.6;
   pointer-events: none;
-  transform: translateY(var(--parallax-y, 0px));
-  transition: transform 0.1s linear;
 }
 
 /* Fejléc */
@@ -2161,8 +2159,8 @@ input[type="range"].calc-slider::-moz-range-thumb {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 80% 20%, var(--accent-glow), transparent 60%);
-  opacity: 0.6;
+  background: radial-gradient(ellipse at 20% 30%, var(--accent-glow), transparent 60%);
+  opacity: 0.55;
 }
 
 .contact-grid {
@@ -3448,8 +3446,8 @@ input[type="range"].calc-slider::-moz-range-thumb {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 20%, var(--accent-glow), transparent 60%);
-  opacity: 0.6;
+  background: radial-gradient(ellipse at 80% 50%, var(--accent-glow), transparent 60%);
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
 }
