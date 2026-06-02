@@ -550,7 +550,7 @@ function Calculator() {
               <div className="calc-disclaimer-params">
                 <div className="calc-disclaimer-pills">
                   <span className="calc-disclaimer-pill pill-accent">{Math.round(calcRate * 100)}% éves bruttó hozam</span>
-                  <span className="calc-disclaimer-pill">1,19% éves alapkezelési díj</span>
+                  <span className="calc-disclaimer-pill pill-accent">1,19% éves alapkezelési díj</span>
                 </div>
                 <p className="calc-disclaimer-admin">
                   Havi adminisztrációs költség a 13. hónaptól:
