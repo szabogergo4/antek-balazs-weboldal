@@ -39,6 +39,28 @@ function App() {
     document.body.dataset.hero = t.heroTreatment;
   }, [t.accent, t.typePairing, t.heroTreatment]);
 
+  // Arany kurzor glow
+  React.useEffect(() => {
+    const root = document.documentElement;
+    let rafId = null;
+    let tx = -9999, ty = -9999;
+    let cx = -9999, cy = -9999;
+    function onMove(e) { tx = e.clientX; ty = e.clientY; }
+    function tick() {
+      cx += (tx - cx) * 0.12;
+      cy += (ty - cy) * 0.12;
+      root.style.setProperty("--cx", cx + "px");
+      root.style.setProperty("--cy", cy + "px");
+      rafId = requestAnimationFrame(tick);
+    }
+    window.addEventListener("mousemove", onMove, { passive: true });
+    rafId = requestAnimationFrame(tick);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      cancelAnimationFrame(rafId);
+    };
+  }, []);
+
   // Preloader elrejtése: csak React mount után fut, megvárja a minimum 2,3s preloadert,
   // majd AZONNAL jelzi a hero-nak (preloader:done) — crossfade, nem szekvenciális.
   React.useEffect(function() {
@@ -53,6 +75,7 @@ function App() {
 
   return (
     <>
+      <div id="cursor-glow" aria-hidden="true"/>
       <window.Nav/>
       <window.Hero treatment={t.heroTreatment}/>
       <window.Services/>

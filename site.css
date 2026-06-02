@@ -7,6 +7,28 @@
 
 html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 
+/* ── Arany kurzor glow ── */
+#cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9990;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  left: var(--cx, -9999px);
+  top: var(--cy, -9999px);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(201,169,110,0.22) 0%,
+    rgba(201,169,110,0.10) 28%,
+    rgba(201,169,110,0.03) 55%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  will-change: left, top;
+}
+@media (hover: none) { #cursor-glow { display: none; } }
+
 body {
   background: var(--bg-0);
   color: var(--fg-1);
@@ -575,6 +597,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-top: 1px solid var(--line-1);
   border-bottom: 1px solid var(--line-1);
   position: relative;
+  overflow: hidden;
+}
+.precalc-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 60% 50%, rgba(201,169,110,0.11), transparent 55%);
+  opacity: 0.9;
 }
 
 .precalc-inner {
@@ -680,6 +711,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ============================================================
    SERVICES
    ============================================================ */
+
+#szolgaltatasok {
+  position: relative;
+  overflow: hidden;
+}
+#szolgaltatasok::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 15% 60%, rgba(201,169,110,0.13), transparent 55%),
+              radial-gradient(ellipse at 85% 10%, rgba(201,169,110,0.08), transparent 45%);
+  opacity: 0.8;
+}
 
 .services-head {
   display: grid;
@@ -2073,6 +2118,17 @@ input[type="range"].calc-slider::-moz-range-thumb {
    ============================================================ */
 
 .contact {
+  position: relative;
+  overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 90% 30%, rgba(201,169,110,0.12), transparent 50%),
+              radial-gradient(ellipse at 10% 80%, rgba(201,169,110,0.09), transparent 45%);
+  opacity: 0.85;
 }
 
 .contact-grid {
