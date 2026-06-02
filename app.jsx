@@ -73,6 +73,26 @@ function App() {
     return function() { clearTimeout(hideTimer); };
   }, []);
 
+  // Hash-alapú navigáció: ha az URL-ben #hash van (pl. /#kapcsolat),
+  // a preloader után scrolloz oda — React mount előtt a böngésző nem találja az elemet.
+  React.useEffect(function() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    function scrollToHash() {
+      var el = document.querySelector(hash);
+      if (el) {
+        setTimeout(function() {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 120);
+      }
+    }
+    if (window.__preloaderDone) {
+      scrollToHash();
+    } else {
+      window.addEventListener("preloader:done", scrollToHash, { once: true });
+    }
+  }, []);
+
   return (
     <>
       <div id="cursor-glow" aria-hidden="true"/>
