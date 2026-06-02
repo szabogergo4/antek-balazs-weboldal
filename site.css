@@ -3784,28 +3784,29 @@ input[type="range"].calc-slider::-moz-range-thumb {
   bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(28,28,30,0.95);
+  background: rgba(28,28,30,0.97);
   backdrop-filter: blur(28px) saturate(1.8);
   -webkit-backdrop-filter: blur(28px) saturate(1.8);
   border-radius: 14px;
-  padding: 13px 16px;
-  width: 240px;
-  font-size: 13px;
-  font-family: var(--sans-body);
+  padding: 14px 18px;
+  width: 250px;
+  font-size: 14px;
+  font-family: var(--serif-display);
   font-style: normal;
   font-weight: 400;
-  color: rgba(255,255,255,0.82);
-  line-height: 1.55;
+  font-optical-sizing: auto;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
   text-align: left;
   z-index: 300;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.55), 0 0 0 0.5px rgba(255,255,255,0.1) inset;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.65), 0 0 0 0.5px rgba(255,255,255,0.12) inset;
   white-space: normal;
   pointer-events: none;
-  animation: tip-in 0.18s cubic-bezier(0.34,1.36,0.64,1) both;
+  animation: tip-in 0.32s cubic-bezier(0.34,1.36,0.64,1) both;
 }
 @keyframes tip-in {
-  from { opacity: 0; transform: translateX(-50%) translateY(6px) scale(0.95); }
-  to   { opacity: 1; transform: translateX(-50%) translateY(0)  scale(1);    }
+  from { opacity: 0; transform: translateX(-50%) translateY(12px) scale(0.88); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0)     scale(1);   }
 }
 /* Kis háromszög nyíl */
 .info-tip-box::before {
@@ -3825,11 +3826,11 @@ input[type="range"].calc-slider::-moz-range-thumb {
     right: -8px;
     transform: none;
     width: 210px;
-    animation: tip-in-mobile 0.18s cubic-bezier(0.34,1.36,0.64,1) both;
+    animation: tip-in-mobile 0.32s cubic-bezier(0.34,1.36,0.64,1) both;
   }
   @keyframes tip-in-mobile {
-    from { opacity: 0; transform: translateY(6px) scale(0.95); }
-    to   { opacity: 1; transform: translateY(0)   scale(1);    }
+    from { opacity: 0; transform: translateY(12px) scale(0.88); }
+    to   { opacity: 1; transform: translateY(0)     scale(1);   }
   }
   .info-tip-box::before { left: auto; right: 18px; transform: none; }
 }
