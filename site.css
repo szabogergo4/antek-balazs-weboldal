@@ -2900,6 +2900,20 @@ input[type="range"].calc-slider::-moz-range-thumb {
   transform: translateY(-2px);
 }
 .br-gomb-ikon { font-size: 22px; flex-shrink: 0; }
+.br-allianz-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 5px 9px;
+  flex-shrink: 0;
+}
+.br-allianz-svg {
+  width: 70px;
+  height: auto;
+  display: block;
+}
 .br-gomb-szoveg { display: flex; flex-direction: column; gap: 3px; }
 .br-gomb-cim {
   font-size: 14px;
