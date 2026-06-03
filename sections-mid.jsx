@@ -637,9 +637,10 @@ function Calculator() {
                         {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(row.hozam_cum / eurRate)} /></span>}
                       </div>
                       {withSzja && (
-                        <div className="ev-adat bonusz">
+                        <div className="ev-adat bonusz szja-szin">
                           <span className="adat-cimke">SZJA</span>
                           <span className="adat-ft"><SzamFt v={row.szja_cum} /></span>
+                          {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(row.szja_cum / eurRate)} /></span>}
                         </div>
                       )}
                       <div className="ev-adat egyenleg">
