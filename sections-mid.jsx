@@ -345,15 +345,6 @@ function Calculator() {
                   className={"calc-tab-btn" + (tab === "nyugdij" ? " active" : "")}
                   onClick={function() { setTab("nyugdij"); }}>Nyugdíj</button>
               </div>
-              {/* ── Mobil: scroll gomb ── */}
-              <button
-                className="calc-mobil-scroll-btn"
-                onClick={function() {
-                  var el = document.querySelector('.calc-result');
-                  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}>
-                Eredmény megtekintése <span className="calc-mobil-scroll-nyil">↓</span>
-              </button>
             </div>
 
             {/* Havi befizetés — kártyagombok + egyéni összeg */}
@@ -453,6 +444,16 @@ function Calculator() {
                 })}
               </div>
             </div>
+
+            {/* ── Mobil: scroll gomb az EUR/HUF blokk felett ── */}
+            <button
+              className="calc-mobil-scroll-btn"
+              onClick={function() {
+                var el = document.querySelector('.calc-result');
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}>
+              Eredmény megtekintése <span className="calc-mobil-scroll-nyil">↓</span>
+            </button>
 
             {/* EUR/HUF árfolyam */}
             <div className="calc-fx-block reveal">

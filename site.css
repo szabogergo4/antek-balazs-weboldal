@@ -956,7 +956,7 @@ input[type="range"].calc-slider::-moz-range-thumb {
   border: 1px solid var(--line-1);
   padding: var(--s-7);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 .calc-result::before {
   content: '';
