@@ -107,36 +107,24 @@ function InfoTooltip({ text }) {
     };
   }, [open]);
 
-  // Viewport-alapú igazítás: megakadályozza, hogy a tooltip kilógjon a képernyőről
+  // Viewport-alapú igazítás — margin-left eltolással, offsetParent-től független
   React.useEffect(function() {
     if (!open || !boxRef.current) return;
-    var el  = boxRef.current;
-    var box = el.getBoundingClientRect();
-    var vw  = window.innerWidth;
-    var PAD = 10; // minimális margó a képernyő szélétől
-
-    // Visszaállítjuk az inline stílust, hogy a CSS-értékeket megkapjuk
-    el.style.left      = '';
-    el.style.right     = '';
-    el.style.transform = '';
-
-    // Újra mérjük a CSS által beállított pozíció után
-    box = el.getBoundingClientRect();
-
-    if (box.left < PAD) {
-      // Kilóg a bal oldalon → toljuk jobbra
-      el.style.left      = '0';
-      el.style.right     = 'auto';
-      el.style.transform = 'none';
-    } else if (box.right > vw - PAD) {
-      // Kilóg a jobb oldalon → toljuk balra
-      var excess     = box.right - (vw - PAD);
-      var parentLeft = el.offsetParent ? el.offsetParent.getBoundingClientRect().left : 0;
-      var newLeft    = box.left - parentLeft - excess;
-      el.style.left      = newLeft + 'px';
-      el.style.right     = 'auto';
-      el.style.transform = 'none';
-    }
+    var el = boxRef.current;
+    // Először töröljük az előző korrekciót
+    el.style.marginLeft = '';
+    // Egy frame után mérjük (CSS animation/transform már érvényes)
+    requestAnimationFrame(function() {
+      if (!el) return;
+      var box = el.getBoundingClientRect();
+      var vw  = window.innerWidth;
+      var PAD = 10;
+      if (box.left < PAD) {
+        el.style.marginLeft = (PAD - box.left) + 'px';
+      } else if (box.right > vw - PAD) {
+        el.style.marginLeft = -(box.right - (vw - PAD)) + 'px';
+      }
+    });
   }, [open]);
 
   return (
