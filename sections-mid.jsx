@@ -605,7 +605,7 @@ function Calculator() {
                 {eurRate > 0 && <div className="calc-summary-eur"><SzamEur v={Math.round(result.hozam / eurRate)} /></div>}
               </div>
               {withSzja && (
-                <div className="calc-summary-card">
+                <div className="calc-summary-card szja-card">
                   <div className="calc-summary-label">SZJA VISSZATÉRÍTÉS</div>
                   <div className="calc-summary-value bonus"><SzamFt v={result.szja} /></div>
                   {eurRate > 0 && <div className="calc-summary-eur"><SzamEur v={Math.round(result.szja / eurRate)} /></div>}
@@ -664,9 +664,10 @@ function Calculator() {
                     <span className="adat-ft"><SzamFt v={result.hozam} /></span>
                   </div>
                   {withSzja && (
-                    <div className="ev-adat bonusz">
+                    <div className="ev-adat bonusz szja-szin">
                       <span className="adat-cimke">SZJA</span>
                       <span className="adat-ft"><SzamFt v={result.szja} /></span>
+                      {eurRate > 0 && <span className="adat-eur"><SzamEur v={Math.round(result.szja / eurRate)} /></span>}
                     </div>
                   )}
                   <div className="ev-adat egyenleg">

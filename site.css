@@ -1032,6 +1032,9 @@ input[type="range"].calc-slider::-moz-range-thumb {
 .toke-card .calc-summary-eur { color: var(--fg-0); }
 .hozam-card .calc-summary-eur .szam-ertek { color: #c9a84c; }
 .hozam-card .calc-summary-eur { color: #c9a84c; }
+.szja-card .calc-summary-value .szam-ertek { color: var(--accent); }
+.szja-card .calc-summary-eur .szam-ertek { color: var(--accent); }
+.szja-card .calc-summary-eur { color: var(--accent); }
 .vegso-card .calc-summary-value .szam-ertek { color: var(--positive); }
 .vegso-card .calc-summary-eur .szam-ertek { color: var(--positive); }
 .vegso-card .calc-summary-eur { color: var(--positive); }
