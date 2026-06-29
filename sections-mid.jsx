@@ -568,7 +568,7 @@ function Calculator() {
             <div className="calc-disclaimer">
               <div className="calc-disclaimer-header">
                 <span className="calc-disclaimer-title">Vázlatszerű tájékoztatás</span>
-                <InfoTooltip text="Vázlatszerű, tájékoztató jellegű számítás — a tényleges értékek a választott program és piaci körülmények függvényében eltérhetnek." />
+                <InfoTooltip text="Vázlatszerű, tájékoztató jellegű számítás. A tényleges értékek a választott program és piaci körülmények függvényében eltérhetnek." />
               </div>
               <div className="calc-disclaimer-params">
                 <div className="calc-disclaimer-pills">

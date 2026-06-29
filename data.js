@@ -65,7 +65,7 @@ const SITE = {
   calculator: {
     eyebrow: "MEGTAKARÍTÁSI KALKULÁTOR",
     title: "Mutassa meg, mennyit szeretne félretenni.",
-    lead: "Húzza a csúszkát a tervezett havi összegre. Az alábbi becslés a Bónusz Életprogram átlagos, hosszú távú hozamával számol — 7,2% évi átlaggal, 10 éves futamidőre.",
+    lead: "Húzza a csúszkát a tervezett havi összegre. Az alábbi becslés a Bónusz Életprogram átlagos, hosszú távú hozamával számol: 7,2% évi átlaggal, 10 éves futamidőre.",
     annualReturn: 0.072, // 7.2%
     years: 10,
     minMonthly: 10000,
@@ -163,7 +163,7 @@ const SITE = {
       {
         id: "goal",
         q: "Mi a megtakarítás elsődleges célja?",
-        help: "Több válasz közül egyet választhat — ez segít a megfelelő portfólió beállításában.",
+        help: "Több válasz közül egyet választhat, ez segít a megfelelő portfólió beállításában.",
         kind: "options",
         options: [
           { v: "retirement", label: "Nyugdíj-kiegészítés", help: "Hosszú táv, biztonságos hozam" },
@@ -187,7 +187,7 @@ const SITE = {
       {
         id: "monthly",
         q: "Havonta mennyit tudna félretenni?",
-        help: "Tájékoztató összeg — a végleges keretet közösen alakítjuk ki.",
+        help: "Tájékoztató összeg, a végleges keretet közösen alakítjuk ki.",
         kind: "options",
         options: [
           { v: "25-50",   label: "25 – 50 ezer Ft",   help: "Tipikus kezdő keret" },
