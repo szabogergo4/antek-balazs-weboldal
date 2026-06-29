@@ -62,7 +62,7 @@ function calcBonus(monthly, activeYears, withSzja, rate) {
       balance:     Math.round(balance),
       szja_cum:    Math.round(szjaAcc),
       szja_ev_yr:  Math.round(szja_credit),
-      hozam_cum:   Math.round(balance) - monthly * 12 * y,
+      hozam_cum:   Math.round(balance) + Math.max(0, Math.round(bonus_szamla - cumBonus)) - monthly * 12 * y,
     });
   }
 
