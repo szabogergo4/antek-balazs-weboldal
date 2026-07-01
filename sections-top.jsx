@@ -22,7 +22,7 @@ function Nav() {
         <a className="logo" href="#foooldal" onClick={close}>
           <span className="logo-nev-blokk">
             <span className="logo-fonev">{SITE.brand.name}</span>
-            <span className="logo-szerepkor">Főtanácsadó</span>
+            <span className="logo-szerepkor">Tanácsadó</span>
           </span>
         </a>
         <ul className="nav-links">
