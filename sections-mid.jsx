@@ -1093,7 +1093,7 @@ function Team() {
 
         {/* BAL: fotó — full bleed + overlays */}
         <div className="br2-img-col" ref={imgColRef}>
-          <img src="assets/antek_balazs.jpg" alt="Antek Balázs" className="br2-photo" />
+          <img src="assets/antek_balazs.png" alt="Antek Balázs" className="br2-photo" />
           <div className="br2-kep-felso-fade" />
           <div className="br2-kep-jobb-fade" />
           <div className="br2-kep-also-fade" />
