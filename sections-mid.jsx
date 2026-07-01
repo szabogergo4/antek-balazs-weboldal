@@ -1093,7 +1093,7 @@ function Team() {
 
         {/* BAL: fotó — full bleed + overlays */}
         <div className="br2-img-col" ref={imgColRef}>
-          <img src="assets/balogh_richard.jpg" alt="Balogh Richárd" className="br2-photo" />
+          <img src="assets/antek_balazs.jpg" alt="Antek Balázs" className="br2-photo" />
           <div className="br2-kep-felso-fade" />
           <div className="br2-kep-jobb-fade" />
           <div className="br2-kep-also-fade" />
@@ -1107,39 +1107,28 @@ function Team() {
           </h2>
           <div className="br2-divider" />
           <div className="br2-bio">
-            <p>Balogh Richárd vagyok, biztosításközvetítő, aki hisz abban, hogy a megfelelő döntések ma meghatározzák a holnapot.</p>
-            <p>Személyre szabott megoldásokat kínálok életbiztosítás, nyugdíjtervezés és vagyonvédelem területén. Nyitott kommunikáció, hosszú távú bizalom, valódi eredmények.</p>
-            <p>2021-ben igazgatósági szinten elnyertem Az Év Tanácsadója díjat, 1 400 tanácsadó közül a top 10-ben végeztem országosan. Ezt a kivételes elismerést 2025-ben is sikerült megszereznem: az Allianz közel 130 éves hazai történetében elsőként nyert valaki kétszer egymást követően ilyen rangos díjat.</p>
+            <p>Üdvözöllek, Antek Balázs vagyok, az Allianz tanácsadója. Az a célom, hogy világos, érthető és személyre szabott tanácsokat adjak.</p>
+            <p>Mivel minden ügyfél egyedi, figyelek az igényeikre, és arra, hogy a legmegfelelőbb megoldást találjuk meg számukra. Fontos számomra, hogy megbízható, hosszú távon is stabil pénzügyi védelmet nyújtsak.</p>
+            <p>Minden tanácsadás során a bizalomra és a személyes figyelemre alapozok. Ha szeretnéd tisztán látni a lehetőségeidet, keress meg, és segítek megtalálni a legjobb megoldást számodra.</p>
           </div>
 
-          {/* Stat sorok — EREDMÉNYEK felirattal */}
-          <div className="br2-eredmenyek-label">EREDMÉNYEK</div>
+          {/* Alapelvek */}
+          <div className="br2-eredmenyek-label">ALAPELVEIM</div>
           <div className="br2-stats">
             <div className="stat-sor">
-              <span className="stat-szam">Top 10</span>
+              <span className="stat-szam">I.</span>
               <span className="stat-elvalaszto" />
-              <span className="stat-leiras">1 400 főből országosan</span>
+              <span className="stat-leiras">Személyes megközelítés</span>
             </div>
             <div className="stat-sor">
-              <span className="stat-szam">2021</span>
+              <span className="stat-szam">II.</span>
               <span className="stat-elvalaszto" />
-              <span className="stat-leiras">Az Év Tanácsadója</span>
+              <span className="stat-leiras">Hosszú távú bizalom</span>
             </div>
             <div className="stat-sor">
-              <span className="stat-szam">2025</span>
+              <span className="stat-szam">III.</span>
               <span className="stat-elvalaszto" />
-              <span className="stat-leiras">Az Év Tanácsadója, <em>elsőként kétszer</em></span>
-            </div>
-            <div className="stat-sor">
-              <span className="stat-szam">
-                <span className="szam-blokk">
-                  <span className="szam-ertek">929</span>
-                  <span className="szam-egyseg">db</span>
-                </span>
-              </span>
-              <span className="stat-elvalaszto" />
-              <span className="stat-leiras">Élő szerződés</span>
-              <span className="stat-valtozas">+5% ↑</span>
+              <span className="stat-leiras">Átlátható tanácsadás</span>
             </div>
           </div>
         </div>
@@ -1148,56 +1137,7 @@ function Team() {
       {/* ── Adatblokk + kördiagram + Hitelesített — container-ben ── */}
       <div className="container">
 
-        {/* Mutatók + diagram egy sorban */}
-        <div className="br2-adatok-sor reveal">
-          <div className="mutato-elem">
-            <div className="mutato-cimke">GONDOZOTT ÁLLOMÁNY</div>
-            <div className="mutato-szam">
-              <span className="szam-blokk">
-                <span className="szam-ertek">252 336 286</span>
-                <span className="szam-egyseg">Ft</span>
-              </span>
-            </div>
-            <div className="mutato-valtozas">+7% előző évhez</div>
-          </div>
-          <div className="mutato-elem">
-            <div className="mutato-cimke">ÉLŐ SZERZŐDÉSEK</div>
-            <div className="mutato-szam">
-              <span className="szam-blokk">
-                <span className="szam-ertek">929</span>
-                <span className="szam-egyseg">db</span>
-              </span>
-            </div>
-            <div className="mutato-valtozas">+5% előző időszak</div>
-          </div>
-          <div className="diagram-wrapper reveal" style={{ transitionDelay: "150ms" }}>
-            <div className="br2-chart-wrap">
-              <canvas ref={chartRef} />
-              <div className="br2-chart-center">
-                <span className="br2-chart-center-label">ÁLLOMÁNY</span>
-                <span className="br2-chart-center-pct" ref={chartPctRef}>0%</span>
-                <span className="br2-chart-center-cat">Élet</span>
-              </div>
-            </div>
-            <div className="br2-legend">
-              <div className="jelm-sor jelm-kiemelt">
-                <span className="br2-legend-dot" style={{ background: '#c9a84c' }} />
-                <span className="jelm-szoveg">Élet</span>
-                <span className="jelm-szazalek">92.18%</span>
-              </div>
-              <div className="jelm-sor">
-                <span className="br2-legend-dot" style={{ background: 'rgba(201,168,76,0.45)' }} />
-                <span className="jelm-szoveg">Nem gépjármű</span>
-                <span className="jelm-szazalek">5.27%</span>
-              </div>
-              <div className="jelm-sor">
-                <span className="br2-legend-dot" style={{ background: 'rgba(201,168,76,0.2)' }} />
-                <span className="jelm-szoveg">Gépjármű</span>
-                <span className="jelm-szazalek">2.55%</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Adatblokk — kitölthető, amint megvannak az adatok */}
 
         {/* ── Hitelesített tanácsadó blokk ── */}
         <div className="br-hitelesitett reveal">
@@ -1209,14 +1149,14 @@ function Team() {
             Regisztrációm és jogosultságom az alábbi hivatalos nyilvántartásokban ellenőrizhető:
           </p>
           <div className="br-hit-gombok">
-            <a href="https://regiszter.mnb.hu/Person" className="br-hit-gomb br-mnb-gomb" target="_blank" rel="noopener noreferrer">
+            <a href="https://regiszter.mnb.hu/Person/History?id=252791" className="br-hit-gomb br-mnb-gomb" target="_blank" rel="noopener noreferrer">
               <span className="br-gomb-ikon">🏛</span>
               <span className="br-gomb-szoveg">
-                <span className="br-gomb-cim">MNB Ügynökazonosító · <span style={{fontWeight:400, opacity:0.75}}>120071700176</span></span>
-                <span className="br-gomb-alcim">Keresés: „Balogh Richárd Imre", Magyar Nemzeti Bank nyilvántartás →</span>
+                <span className="br-gomb-cim">MNB nyilvántartás</span>
+                <span className="br-gomb-alcim">Keresés: „Antek Balázs", Magyar Nemzeti Bank nyilvántartás →</span>
               </span>
             </a>
-            <a href="https://www.allianz.hu/hu_HU/salesrep.html?name=Balogh+Rich%C3%A1rd+Imre#/" className="br-hit-gomb br-allianz-gomb" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.allianz.hu/hu_HU/salesrep.html?name=Antek+Bal%C3%A1zs#/" className="br-hit-gomb br-allianz-gomb" target="_blank" rel="noopener noreferrer">
               <span className="br-allianz-logo-wrap">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 399.76 99.15" className="br-allianz-svg" aria-label="Allianz">
                   <path d="M36.43,52.48H22.78l7.27-23.72ZM15.7,78.62,20.36,63H38.75l4.36,15.58h17L43.22,19.18c-1-3.51-3.1-5.13-6.79-5.13H12.32v5.61h2c2.52,0,3.88,1,3.88,2.91,0,1.27-.28,2.33-1.28,5.22L0,78.62Z" fill="#003781"/>
