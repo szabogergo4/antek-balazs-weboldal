@@ -1,5 +1,5 @@
 /* ============================================================
-   Horváth Milán — Site styles
+   Antek Balázs — Site styles
    Built on tokens from colors_and_type.css
    ============================================================ */
 
@@ -12,17 +12,17 @@ html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
   position: fixed;
   pointer-events: none;
   z-index: 9990;
-  width: 420px;
-  height: 420px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   left: 0;
   top: 0;
   transform: translate(var(--cx, -9999px), var(--cy, -9999px)) translate(-50%, -50%);
   background: radial-gradient(circle,
-    rgba(201,169,110,0.38) 0%,
-    rgba(201,169,110,0.15) 35%,
-    rgba(201,169,110,0.03) 60%,
-    transparent 75%
+    rgba(201,169,110,0.45) 0%,
+    rgba(201,169,110,0.18) 40%,
+    rgba(201,169,110,0.04) 65%,
+    transparent 80%
   );
   will-change: transform;
 }

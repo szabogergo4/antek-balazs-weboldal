@@ -1,15 +1,12 @@
 /* global React */
-// ============================================================
-//  SABLON — Pénzügyi tanácsadó weboldal
-//  Szerkesztendő mezők: keress rá a "CSERE:" megjegyzésre
-// ============================================================
+// Antek Balázs — site content
 
 const SITE = {
   brand: {
-    name:      "Kovács Péter",              // CSERE: teljes név
-    role:      "PÉNZÜGYI TANÁCSADÓ",        // CSERE: ha más a titulus
-    location:  "Budapesti lefedettség",     // CSERE: iroda helyszín
-    monogram:  "KP",                        // CSERE: kezdőbetűk (favicon)
+    name:      "Antek Balázs",
+    role:      "PÉNZÜGYI TANÁCSADÓ",
+    location:  "Allianz tanácsadó",
+    monogram:  "AB",
   },
   nav: [
     { href: "#foooldal",       label: "Főoldal" },
@@ -24,7 +21,7 @@ const SITE = {
     sub:       "Segítek megépíteni azt a vagyont, amire egész életedben szükséged lesz, kamatadó-mentesen, kiemelkedő hozamokkal, transzparens módon.",
     primary:   "Számold ki",
     secondary: "Beszéljünk",
-    videoSrc:  "assets/hero.mp4",          // CSERE: ha más videó kell (fájlt is cseréld!)
+    videoSrc:  "assets/hero.mp4",
     fallback:  "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1800&q=80",
   },
   services: {
@@ -65,17 +62,17 @@ const SITE = {
     ],
   },
   calculator: {
-    eyebrow:       "MEGTAKARÍTÁSI KALKULÁTOR",
-    title:         "Mutassa meg, mennyit szeretne félretenni.",
-    lead:          "Húzza a csúszkát a tervezett havi összegre. Az alábbi becslés a Bónusz Életprogram átlagos, hosszú távú hozamával számol: 7,2% évi átlaggal, 10 éves futamidőre.",
-    annualReturn:  0.072,
-    years:         10,
-    minMonthly:    10000,
-    maxMonthly:    200000,
-    stepMonthly:   5000,
-    defaultMonthly:50000,
-    bonusRatePct:  5,
-    disclaimer:    "Az itt szereplő adatok tájékoztató jellegűek és nem minősülnek ajánlattételnek. A tényleges hozam a választott eszközalaptól és a piaci viszonyoktól függően eltérhet. Részletes feltételekért keressen meg személyesen.",
+    eyebrow:        "MEGTAKARÍTÁSI KALKULÁTOR",
+    title:          "Mutassa meg, mennyit szeretne félretenni.",
+    lead:           "Húzza a csúszkát a tervezett havi összegre. Az alábbi becslés a Bónusz Életprogram átlagos, hosszú távú hozamával számol: 7,2% évi átlaggal, 10 éves futamidőre.",
+    annualReturn:   0.072,
+    years:          10,
+    minMonthly:     10000,
+    maxMonthly:     200000,
+    stepMonthly:    5000,
+    defaultMonthly: 50000,
+    bonusRatePct:   5,
+    disclaimer:     "Az itt szereplő adatok tájékoztató jellegűek és nem minősülnek ajánlattételnek. A tényleges hozam a választott eszközalaptól és a piaci viszonyoktól függően eltérhet. Részletes feltételekért keressen meg személyesen.",
   },
   timeline: {
     eyebrow: "A FOLYAMAT",
@@ -107,17 +104,18 @@ const SITE = {
   team: {
     eyebrow: "TÖRTÉNETEM",
     title:   "Aki mellett biztos kezekben van",
-    lead:    "Ide kerül a rövid bemutatkozó szöveg.",  // CSERE: 1-2 mondat
+    lead:    "Világos tanácsok, személyes figyelem, hosszú távú bizalom.",
     members: [
       {
-        role: "PÉNZÜGYI TANÁCSADÓ",
-        name: "Kovács Péter",               // CSERE: teljes név
-        bio:  "Ide kerül a bemutatkozó szöveg.",       // CSERE: bio szöveg
-        img:  "assets/photo.jpg",           // CSERE: fotó fájlnév (tedd az assets/ mappába)
+        role:    "PÉNZÜGYI TANÁCSADÓ",
+        name:    "Antek Balázs",
+        bio:     "Üdvözöllek, Antek Balázs vagyok, az Allianz tanácsadója. Az a célom, hogy világos, érthető és személyre szabott tanácsokat adjak. Mivel minden ügyfél egyedi, figyelek az igényeikre, és arra, hogy a legmegfelelőbb megoldást találjuk meg számukra. Fontos számomra, hogy megbízható, hosszú távon is stabil pénzügyi védelmet nyújtsak. Minden tanácsadás során a bizalomra és a személyes figyelemre alapozok. Ha szeretnéd tisztán látni a lehetőségeidet, keress meg, és segítek megtalálni a legjobb megoldást számodra.",
+        img:     "assets/photo.jpg",
+        mnbLink: "https://regiszter.mnb.hu/Person/History?id=252791",
         creds: [
-          { num: "50+",  lbl: "Aktív ügyfél" },        // CSERE: saját szám
-          { num: "8",    lbl: "Év tapasztalat" },       // CSERE: saját szám
-          { num: "7,2%", lbl: "Átlagos hozam" },
+          { num: "I.",   lbl: "Személyes megközelítés" },
+          { num: "II.",  lbl: "Hosszú távú bizalom" },
+          { num: "III.", lbl: "Átlátható tanácsadás" },
         ],
         side: "left",
       },
@@ -128,9 +126,9 @@ const SITE = {
     title:   "Beszéljünk a terveidről.",
     lead:    "Díjmentes konzultáció. Hívj, írj, vagy hagyj üzenetet, 24 órán belül válaszolok személyesen.",
     items: [
-      { icon: "phone",   lbl: "TELEFON", val: "06 XX XXX XXXX" },              // CSERE
-      { icon: "mail",    lbl: "E-MAIL",  val: "nev@allianztanacsado.hu" },      // CSERE
-      { icon: "map-pin", lbl: "IRODA",   val: "Város és lefedettség" },         // CSERE
+      { icon: "phone",   lbl: "TELEFON", val: "06 70 328 5203" },
+      { icon: "mail",    lbl: "E-MAIL",  val: "csaba.antek.balazs@allianztanacsado.hu" },
+      { icon: "map-pin", lbl: "IRODA",   val: "Országos lefedettség" },
     ],
   },
   footer: {
@@ -149,11 +147,11 @@ const SITE = {
       {
         head: "KÖVESSE",
         links: [
-          { label: "Facebook", href: "https://www.facebook.com/CSERE" },        // CSERE: Facebook link
+          { label: "Facebook", href: "https://www.facebook.com/CSERE" },
         ],
       },
     ],
-    base: "© 2026 Kovács Péter Pénzügyi Tanácsadó. Minden jog fenntartva.",   // CSERE: név
+    base: "© 2026 Antek Balázs Pénzügyi Tanácsadó. Minden jog fenntartva.",
   },
   quiz: {
     eyebrow: "SZEMÉLYRE SZABOTT JAVASLAT",
@@ -166,10 +164,10 @@ const SITE = {
         help: "Több válasz közül egyet választhat, ez segít a megfelelő portfólió beállításában.",
         kind: "options",
         options: [
-          { v: "retirement", label: "Nyugdíj-kiegészítés",   help: "Hosszú táv, biztonságos hozam" },
-          { v: "kids",       label: "Gyermek jövője",         help: "Tanulás, otthonteremtés" },
-          { v: "house",      label: "Lakásvásárlás",          help: "5–15 éven belül" },
-          { v: "freedom",    label: "Pénzügyi függetlenség",  help: "Tartalék és szabadság" },
+          { v: "retirement", label: "Nyugdíj-kiegészítés",  help: "Hosszú táv, biztonságos hozam" },
+          { v: "kids",       label: "Gyermek jövője",        help: "Tanulás, otthonteremtés" },
+          { v: "house",      label: "Lakásvásárlás",         help: "5–15 éven belül" },
+          { v: "freedom",    label: "Pénzügyi függetlenség", help: "Tartalék és szabadság" },
         ],
       },
       {
